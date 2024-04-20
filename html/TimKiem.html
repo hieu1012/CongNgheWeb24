@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Object.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".header").load("../html/header.html");
+        });
+        jQuery(document).ready(function ($) {
+            $(".footer").load("../html/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container mt-2">
+        <div class="row w-100">
+            <ol class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a href="../html/TrangChu.html">Trang chủ</a></li>
+                <li class="breadcrumb-item" aria-current="page">Kết quả tìm kiếm</li>
+            </ol>
+        </div>
+
+        <div class="owl-carousel owl-theme row mx-0 w-50" id="timSach"> </div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script>
+    var search = localStorage.getItem("search");
+    var htmlObj = document.getElementById("timSach");
+    dsBook.forEach(sp => {
+        let item = "<div class=\"item col px-md-0\"><div class=\"card d-flex flex-column align-items-center m-md-2 ribbon\"><img class=\"card-img-top\" src=\""
+            + sp.anh + "\"alt=\"Card image\"><div class=\"card-body\"><h4 class=\"card-title product-name text-center\">"
+            + sp.ten + "</h4><p class=\"text-center mb-1\"><span class=\"price-old\">"
+            + sp.giacu + "</span></p><p class=\"text-center text-danger price font-weight-bold m-md-0\">"
+            + sp.giamoi + "</p></div><div class=\"ribbon2\"><span>" + sp.giamgia + "</span></div></div></div>";
+        if (sp.ten.toLowerCase().includes(search.toLowerCase()))
+            htmlObj.innerHTML = htmlObj.innerHTML + item;
+        $("div.item").on("click", function () {
+            var text = this.innerText;
+            var ten = text.split('.')[0] + "."
+            let sach = ds.find(book => book.ten == ten)
+            sessionStorage.setItem('maSach', sach.maSach);
+            window.open('../html/ThongTinSP.html');
+        });
+    });
+
+</script>
+</html>

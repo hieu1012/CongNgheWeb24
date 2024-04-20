@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/TrangChu.css">
+    <link rel="stylesheet" href="../css/mdb.css">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/mdb.min.js"></script>
+    <script src="../js/Object.js"></script>
+    <script>
+        $("#btnDangNhap").click(function () {
+            $("#signinPage").modal();
+        });
+
+        $("#btnLogin").click(function () {
+            var username = document.getElementById('username').value;
+            var pw = document.getElementById('pw').value;
+            if (username != sessionStorage.getItem('username') || pw != sessionStorage.getItem('pw')) {
+                alert("Tài khoản không đúng, vui lòng nhập lại!")
+                return false;
+            } else {
+                alert("Đăng nhập thành công");
+                window.location.href = "../html/TrangChu.html"
+                return true;
+            }
+        });
+        $("#btnSearch").click(function () {
+            var txt = document.getElementById('txtSearch').value;
+            localStorage.setItem("search", txt);
+            window.location.href = "../html/TimKiem.html";
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid" style="padding-bottom: 10px;">
+        <div class="row" style="background-color: #d1f1d9;">
+            <div class="col-md-1">
+                <div class="row">
+                    
+                    <p style="margin-left: 20PX; font-size: 20px; color: rgb(5, 116, 5); padding-top: 20px; font-family: fantasy;">
+                        <i><b>CUA HANG DIEN NUOC HT</b></i>
+                    </p>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand col-md-8" style="padding: 7px 0px 0px 0px;">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item pf-5 pr-5 align-items-center font-weight-bold"><a href="../html/TrangChu.html"
+                            style="color:darkgreen ; font-size: 20px;" class="nav-link navbar-link">TRANG CHỦ</a></li>
+                    <li class="nav-item dropdown pf-5 pr-5 align-items-center font-weight-bold">
+                        <a href="" class="nav-link navbar-link dropdown-toggle" data-toggle="dropdown"
+                            style="color:darkgreen; font-size: 20px;">DANH MỤC</a>
+                        <div class="dropdown-menu" onblur="">
+                            <a href="../html/DanhSach.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"><b>Bàn ủi, bàn là</b> </a>
+                            <a href="../html/DanhSach.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"> <b> Quạt điện</b></a>
+                            <a href="../html/DanhSach.html" class="dropdown-item "
+                                style="color: rgb(2, 81, 2);font-size: 23px;"><b>Máy hút bụi</b></a>
+                            <a href="../html/DanhSach.html" class="dropdown-item "
+                                style="color: rgb(2, 81, 2);font-size: 23px;"> <b>Máy lọc nước</b> </a>
+                            <a href="../html/DanhSach.html" class="dropdown-item "
+                                style="color: rgb(2, 81, 2);font-size: 23px;"><b>Thiết bị sưởi ấm</b> </a>
+                            <a href="../html/DanhSach.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"> <b> Cây nước nóng lạnh</b></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pf-5 pr-5 align-items-center font-weight-bold">
+                        <a href="" class="nav-link navbar-link dropdown-toggle" data-toggle="dropdown"
+                            style="color:darkgreen; font-size: 20px;">THÔNG TIN CỬA HÀNG</a>
+                        <div class="dropdown-menu" onblur="">
+                            <a href="../html/GioiThieu.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"><b>Giới thiệu của hàng</b> </a>
+                            <a href="../html/LienHe.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"> <b>Liên hệ cửa hàng</b></a>
+                            <a href="../html/SiteMap.html" class="dropdown-item"
+                                style="color: rgb(2, 81, 2);font-size: 23px;"><b>Site Map</b></a>
+
+                        </div>
+                    </li>
+                    <li>
+
+                        <div>
+                            <div>
+                                <input type="text" class="form-check-label" placeholder="Search" name="search"
+                                    style="height: 40px; width: 300px;" id="txtSearch">
+                                <button type="submit" class="btn" id="btnSearch"
+                                    style="background-color: rgb(6, 123, 6); height: 40px;">Search</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-md-3">
+                <div class="row h-100">
+                    <div class="col-md d-flex flex-column justify-content-around">
+                        <div>
+                            <div class="d-inline-flex">
+                                <div class="d-flex flex-column justify-content-around">
+                                    <img src="../img/icon/user.png" alt="">
+                                </div>
+                                <div>
+                                    <a href="" class="text-decoration-none navbar-link" id="btnDangNhap"
+                                        data-toggle="modal" style="color:darkgreen ;"> <b> Đăng nhập</b></a> <br>
+                                    <a href="../html/DangKy.html" class="text-decoration-none navbar-link"
+                                        style="color:darkgreen ;"> <b>Đăng
+                                            ký</b> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md d-flex flex-column justify-content-around">
+                        <div class="">
+                            <div class="d-inline-flex">
+                                <div class="d-flex flex-column justify-content-around">
+                                    <img src="../img/icon/cart.png" alt="">
+                                </div>
+                                <div class="d-flex flex-column justify-content-around">
+                                    <a href="../html/GioHang.html" class="text-decoration-none navbar-link"
+                                        style="color:darkgreen ;"> <b>Giỏ
+                                            hàng</b> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signinPage">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100  font-weight-bold" style="color: darkgreen;">Đăng nhập</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-lable="close">&times;</button>
+                </div>
+                <div class="modal-body mx-4">
+                    <div class="md-form">
+                        <input type="email" class="form-control" id="username">
+                        <label>Tên đăng nhập</label>
+                        <div class="md-form">
+                            <input type="password" class="form-control" id="pw">
+                            <label>Mật khẩu</label>
+                            <p class="font-small blue-text d-flex justify-content-end"><a href="#"
+                                    class="blue-text ml-1">Quên
+                                    mật khẩu?</a></p>
+                        </div>
+
+                        <div class="text-center mb-3">
+                            <button type="button" id="btnLogin" class="btn  btn-block z-depth-1a"
+                                style="background-color: rgb(8, 142, 8);">Đăng nhập</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

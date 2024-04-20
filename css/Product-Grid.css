@@ -1,0 +1,57 @@
+.col-4 {
+    padding-right: 0;
+    margin-bottom: 15px;
+}
+
+.card {
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    height: 350px;
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 15px rgb(59, 59, 59);
+    transform: scale(1.01);
+}
+
+.card .product-name {
+    font-weight: 600;
+}
+
+.card-img img {
+    /* padding-top: 10px; */
+    width: inherit;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+.price {
+    font-size: 0.9rem;
+}
+
+.text-del {
+    text-decoration: line-through;
+}
+
+label {
+    cursor: pointer
+}
+
+.tick {
+    display: block;
+    position: relative;
+    padding-left: 23px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 0
+}
+
+.tick input:checked~.check {
+    background-color: #ffffff
+}
+
+#filter-product {
+    border-radius: 10px;
+}

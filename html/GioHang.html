@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/GioHang.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".header").load("../html/header.html");
+        });
+        jQuery(document).ready(function ($) {
+            $(".footer").load("../html/footer.html");
+        });
+    </script>
+    <style>
+        th {
+            size: 70px;
+        }
+    </style>
+</head>
+<script>
+    loadGioHang();
+</script>
+<body>
+    <div class="header"></div>
+    <div class="pb-5">
+        <div>
+            <div class="container">
+                <div class="row w-100">
+                    <ol class="breadcrumb bg-white">
+                        <li class="breadcrumb-item"><a href="../html/TrangChu.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Giỏ hàng</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 bg-white rounded p-5 mb-md-5 shadow-sm border border-success"
+                        style="border-radius: 20px;">
+                        <!-- table có thanh cuộn theo chiều ngang -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr style="background-color: rgb(233, 249, 233);">
+                                        <th class="col-md-2">
+                                            <div class="text-uppercase font-weight-bold">Hình ảnh</div>
+                                        </th>
+                                        <th class="col-md-4">
+                                            <div class="text-uppercase font-weight-bold">Tên</div>
+                                        </th>
+                                        <th class="col-md-2">
+                                            <div class="text-uppercase font-weight-bold">Giá</div>
+                                        </th>
+                                        <th class="col-md-2">
+                                            <div class="text-uppercase font-weight-bold">Số lượng</div>
+                                        </th>
+                                        <th class="col-md-2">
+                                            <div class="text-uppercase font-weight-bold">Tổng</div>
+                                        </th>
+                                        <th class="col-md-2">
+                                            <div class="text-uppercase font-weight-bold">Xóa</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><a href="../html/ThongTinSP.html"><img src="../img/SanPham/QuatDien/qd1.webp" alt=""
+                                            width="150" id="img" class="align-middle"></a></th>
+                                        <td class="align-middle">
+                                            <h5 class="mb-0"><a href="../html/ThongTinSP.html" class="text-dark d-inline-block"><span
+                                                        id="ten">Quạt điện Senko để bàn tiện lợi cao cấp B1216 màu ngẫu nhiên </span></a></h5>
+                                        </td>
+                                        <td class="align-middle"><strong id="giamoi">114.400 ₫</strong></td>
+                                        <td class="align-middle"><strong><input type="number" min="1" value="1"
+                                                    class="w-25 border-0 text-center" id="soluong"
+                                                    onchange="loadGioHang()"></strong></td>
+                                        <td class="align-middle"><strong id="tonggia">114.400 ₫</strong></td>
+                                        <td class="align-middle">
+                                            <button type="button" class="btn btn-block"
+                                                style="box-shadow: none; background-color: rgb(255, 255, 255);">
+                                                <img src="../img/icon/delete.png" alt="">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row bg-white rounded p-4 py-5 shadow-sm border border-success">
+                    <div class="col-md-6">
+                        <div class="text-uppercase font-weight-bold rounded-pill px-md-4 py-md-3"
+                            style="background-color: rgb(233, 249, 233)">Thông tin
+                            nhân hàng</div>
+                        <form action="" class="p-md-4">
+                            <div class="form-group">
+                                <span class="font-weight-normal text-danger" id="er1">*</span>
+                                <input type="text" class="form-control" id="hoten" placeholder="Họ tên"
+                                    onblur="kiemTraHoTen()">
+                            </div>
+                            <div class="form-group">
+                                <span class="font-weight-normal text-danger" id="er2">*</span>
+                                <input type="tel" class="form-control" id="phone" placeholder="Số điện thoại"
+                                    onblur="kiemTraSDT()">
+                            </div>
+                            <div class="form-group">
+                                <span class="font-weight-normal text-danger" id="er3">*</span>
+                                <textarea name="diachi" id="diachi" cols="30" rows="2" class="form-control"
+                                    placeholder="Địa chỉ" onblur="kiemTraDiaChi()"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="ghichu" id="ghichu" cols="30" rows="3" class="form-control"
+                                    placeholder="Ghi chú cho người bán"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check p-0">
+                                    <div class="form-check">
+                                        <label for="cod" class="form-check-label">
+                                            <input type="radio" name="thanhtoan" id="cod" class="form-check-input">COD
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label for="chuyenkhoan" class="form-check-label">
+                                            <input type="radio" name="thanhtoan" id="chuyenkhoan"
+                                                class="form-check-input" checked>Chuyển khoản
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-uppercase font-weight-bold rounded-pill px-md-4 py-md-3"
+                            style="background-color:rgb(233, 249, 233);">Chi tiết
+                            thanh toán</div>
+                        <div class="p-md-4">
+                            <form action="" class="py-md-4 row d-flex">
+                                <div class="col-md-7 d-flex flex-column justify-content-center"><input type="text"
+                                        id="txtGiamGia" class="form-control" placeholder="Nhập mã giảm giá"></div>
+                                <button type="button" id="btnGiamGia" style="background-color: darkgreen; color: white;" class="btn  col-md-3 p-md-2 rounded-pill" onclick="loadGioHang()"> Áp
+                                    dụng</button>
+                                    <span class="col-md-12 text-success" id="tbGiamGia">Vui lòng nhập mã trước khi áp dụng</span>
+                            </form>
+                            
+                            <p class="font-italic mb-4">Liên hệ nhân viên trước khi chuyển tiền mua hàng</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between border-bottom py-3">
+                                    <strong class="text-muted">Tổng hóa đơn</strong>
+                                    <strong id="tong">0 ₫</strong>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom py-3">
+                                    <strong class="text-muted">Phí vận chuyển</strong>
+                                    <strong id="shipping">0 ₫</strong>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom py-3">
+                                    <strong class="text-muted">Giảm giá</strong>
+                                    <strong id="giamgia">0 ₫</strong>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom py-3">
+                                    <strong class="text-muted">Thanh toán</strong>
+                                    <strong id="thanhtoan">0 ₫</strong>
+                                </li>
+                            </ul>
+                            <button type="button" style="background-color: darkgreen; color: white;" class="btn rounded-pill btn-block py-2" id="btnDatHang"
+                                onclick="">Đặt hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+<script>
+    loadGioHang();
+</script>
+</html>

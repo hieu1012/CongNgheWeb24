@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin sách</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/Object.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            $(".header").load("../html/header.html");
+        });
+        
+        jQuery(document).ready(function($){
+            $(".footer").load("../html/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div>
+            <div class="row w-100">
+                <ol class="breadcrumb bg-white">
+                    <li class="breadcrumb-item"><a href="../html/TrangChu.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Thông tin sách</li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="NuPhapY" class="picture">
+                                <img id="anh" class="img-fluid" src="../img/SanPham/QuatDien/qd1.webp" alt="img">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2><span id="ten"> Quạt điện Senko để bàn tiện lợi cao cấp B1216 màu ngẫu nhiên </span></h2>
+                    <div>
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+                            <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+                            <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+                            <li class="list-inline-item"><span class="fa fa-star checked"></span></li>
+                            <li class="list-inline-item"><span class="fa fa-star"></span></li>
+                        </ul>
+                    </div>
+                    <p id="tinhtrang">
+                        <span>Tình trạng: </span>
+                        <span class="text-success">Còn hàng</span>
+                    </p>
+                    <ul class="text-muted">
+                        <li><span>Nhà cung cấp: </span>ZGROUP</li>
+                        <li><span>Hình thức bảo hành: </span>Điện tử</li> 
+                        <li><span>Model: </span>DTS1607</li>
+                        <li><span>Công suất: </span>65W</li>
+                        <li><span>Chính sách đổi trả: </span>Đổi trả sản phẩm trong 30 ngày</li>
+                    </ul>
+                    <div>
+                        <span id="giamoi" class="text-danger " style="font-size: 30px;">114.000₫</span>
+                        <span id="giacu" class="pl-3"
+                            style="font-size: 18px; text-decoration: line-through;">120.000₫</span>
+                    </div>
+                    <button type="button" class="btn btn-success my-3 hvr-sweep-to-right" onclick="muahang()">Thêm vào giỏ
+                        hàng</button>
+                        <script>
+                            function muahang() {
+                                window.location.href="../html/GioHang.html";
+                              }
+                        </script>
+                    
+                </div>
+            </div>
+            <div class="row pt-md-5">
+                <div class="col-md-6 pt-3">
+                    <h4 class="text-uppercase" id="ten2">Quạt điện Senko để bàn</h4>
+                    <p> QUẠT ĐỨNG THÂN SẮT SENKO DTS-1607
+
+                        Sải cánh quạt rộng
+                        Quạt đứng Senko DTS1607 màu đen cam thiết kế 7 cánh quạt với sải cánh rộng 39cm tạo làn gió mạnh mẽ và dịu mát, thổi bay không khí nóng oi ả của những ngày hè, mang đến cảm giác dễ chịu và thoải mái cho người dùng.</p>
+                    <p> Động cơ vận hành bền bỉ
+                        Quạt đứng Senko DTS1607 màu đen cam được tích hợp cầu chì tự động ngắt điện rất hiệu quả, đề phòng chống cháy nổ khi chập điện. Mô tơ hoạt động bền bỉ, không gây nóng trong quá trình hoạt động, tăng tuổi thọ sử dụng quạt lâu dài. </p>
+                    <p> 3 tốc độ gió
+                        Quạt Senko trang bị núm xoay điều chỉnh 3 tốc độ quay từ thấp tới cao (cao 1200 vòng/phút) tạo luồng gió mạnh mẽ, làm mát căn phòng của bạn nhanh hơn. Ngoài ra, chiếc quạt đứng Senko DTS1607 màu đen cam còn có nút chuyển hướng quạt xoay liên tục rất tiện lợi. </p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <table class="table table-striped">
+                            <caption style="caption-side: top;">
+                                <h4 class="text-uppercase">Thông tin sản phẩm</h4>
+                                <caption>
+                                <tbody>
+                            <tr>
+                                <td>
+                                    Mã hàng</td>
+                                <td>8936117741784</td>
+                            </tr>
+                            <tr>
+                                <td>Tên Nhà Cung Cấp</td>
+                                <td> ZGROUP</td>
+                            </tr>
+                            <tr>
+                                <td>Tác giả</td>
+                                <td>Đới Tây</td>
+                            </tr>
+                            <tr>
+                                <td>Người Dịch</td>
+                                <td>Nguyễn Thu Phương</td>
+                            </tr>
+                            <tr>
+                                <td>NXB</td>
+                                <td>NXB Hà Nội</td>
+                            </tr>
+                            <tr>
+                                <td>Năm XB</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr>
+                                <td>Ngôn Ngữ</td>
+                                <td>Tiếng Việt</td>
+                            </tr>
+                            <tr>
+                                <td>Trọng lượng (gr)</td>
+                                <td>450</td>
+                            </tr>
+                            <tr>
+                                <td>Kích Thước Bao Bì</td>
+                                <td>20.5 x 14.5 cm</td>
+                            </tr>
+                            <tr>
+                                <td>Số trang</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td>Hình thức</td>
+                                <td>Bìa mềm</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+<script>
+    maSach = sessionStorage.getItem('maSach')
+
+    let ds = JSON.parse(localStorage.getItem("dsBook"))
+    let book = ds.find(book => book.maSach == maSach)
+
+    var ten = document.getElementById('ten');
+    ten.innerText = ten.textContent = book.ten;
+
+    var ten2 = document.getElementById('ten2');
+    ten2.innerText = ten2.textContent = book.ten;
+
+    var giacu = document.getElementById('giacu');
+    giacu.innerText = giacu.textContent = book.giacu;
+
+    var giamoi = document.getElementById('giamoi');
+    giamoi.innerText = giamoi.textContent = book.giamoi;
+
+    var img = document.getElementById('anh');
+    img.src = book.anh;
+</script>
+
+</html>

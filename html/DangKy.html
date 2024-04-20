@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/DangKy.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            $(".header").load("../html/header.html");
+        }); 
+        jQuery(document).ready(function($){
+            $(".footer").load("../html/footer.html");
+        });
+    </script>
+    <style>
+        label{
+            color: darkgreen;
+        }
+        form, #tblAccount {
+            margin: 0px 50px 0px 50px;
+            padding: 30px;
+            border: 3px solid darkgreen;
+           }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <ol class="breadcrumb bg-white">
+            <li class="breadcrumb-item"><a href="../html/TrangChu.html">Trang chủ</a></li>
+            <li class="breadcrumb-item" aria-current="page">Đăng ký tài khoản</li>
+        </ol>
+    </div>
+    <div class="row">
+        <form action="" class="col-md-3">
+            <h2 class="text-uppercase" style="color: darkgreen; text-align: center;">Đăng ký tài khoản</h2>
+            <div class="form-group">
+                <label for="txtName" class="font-weight-bold">Họ tên: <span class="font-weight-normal text-danger"
+                        id="er5">*</span></label>
+                <input type="text" class="form-control" name="name" id="txtName" placeholder="Nhập họ tên" onblur="kiemTraHoTen()">
+            </div>
+            
+            <div class="form-group">
+                <label for="txtEmail" class="font-weight-bold">Địa chỉ Email: <span
+                        class="font-weight-normal text-danger" id="er2">*</span></label>
+                <input type="email" class="form-control" id="txtEmail" placeholder="Nhập email" required onblur="kiemTraEmail()">
+            </div>
+            <div class="form-group">
+                <label for="txtTel" class="font-weight-bold">Số điện thoại: <span
+                        class="font-weight-normal text-danger" id="er6">*</span></label>
+                <input type="tel" class="form-control" name="name" id="txtTel" placeholder="Nhập điện thoại" onblur="kiemTraSDT()">
+            </div>
+            <div class="form-group">
+                <label for="txtLoginName" class="font-weight-bold">Tên đăng nhập: <span
+                        class="font-weight-normal text-danger" id="er1">*</span></label>
+                <input type="text" class="form-control" id="txtLoginName" placeholder="Nhập tên đăng nhập" required onblur="kiemTraTenDangNhap()" >
+            </div>
+            <div class="form-group">
+                <label for="txtPassword" class="font-weight-bold">Mật khẩu: <span
+                        class="font-weight-normal text-danger" id="er3">*</span></label>
+                <input type="password" class="form-control" name="password" id="txtPassword" onblur="kiemTraMatKhau()"
+                    placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-group">
+                <label for="txtConfirmPassword" class="font-weight-bold">Nhập lại mật khẩu: <span
+                        class="font-weight-normal text-danger" id="er4">*</span></label>
+                <input type="password" class="form-control" name="confirm_password" id="txtConfirmPassword" onblur="kiemTraNhapLaiMatKhau()"
+                    placeholder="Nhập lại mật khẩu">
+            </div>
+            
+            
+            <div class="d-flex justify-content-center"><button type="button" class="btn" id="btnDangKy" style="background-color: darkgreen; color: white ;">Đăng ký</button>
+            </div>
+        </form>
+        <div class="col-md-7" id="tblAccount">
+            <h2 class="text-uppercase" style="color: darkgreen; text-align: center;">Danh sách tài khoản</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr style="background-color: rgb(233, 249, 233);">
+                        <th style="font-weight: bold; width: 50px;" >STT</th>
+                        <th style="font-weight: bold; width: 200px;">Họ tên</th>
+                        <th style="font-weight: bold; width: 200px;">Email</th>
+                        <th style="font-weight: bold; width: 150px;">SĐT</th>   
+                        <th style="font-weight: bold; width: 200px;">Tên đăng nhập</th>
+                        <th style="font-weight: bold; width: 150px;">Mật khẩu</th>
+                    </tr>
+                </thead>
+                <tbody>    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/Product-Grid.css">
+
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/Object.js"></script>
+    <script src="../js/Product-LoadData.js"></script>   
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".header").load("../html/header.html");
+        });
+        jQuery(document).ready(function ($) {
+            $(".footer").load("../html/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container pt-2">
+        <div class="row w-100 d-inline-flex justify-content-between">
+            <ol class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a href="../html/TrangChu.html">Trang chủ</a></li>
+                <li class="breadcrumb-item" aria-current="page">Thiết bị gia đình</li>
+            </ol>
+        </div>
+        <div>
+            <div class="row"> 
+                <div class="col-12">
+                    <div id="product">
+                        <div class="row border" id="list-product"
+                            style="border-radius: 10px; padding-right: 15px; padding-top: 15px;">
+                        </div>
+                        <div class="row d-flex justify-content-center" style="padding: 25px;" >
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#" id="">
+                                            Last</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">..</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                                <li class="page-item"><a class="page-link" href="#" id="">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
